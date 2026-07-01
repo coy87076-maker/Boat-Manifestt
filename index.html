@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boat Manifest & Eligibility Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="customs-header">
+    <div class="header-left">
+      <div class="header-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22E12 2"/><path d="M5 12H19"/><path d="M12 18C7.5 18 5 14 5 12"/><path d="M12 18C16.5 18 19 14 19 12"/></svg>
+      </div>
+      <div>
+        <h1>Boat Boarding Manifest</h1>
+        <p>Passenger Capacity & Safety Verification</p>
+      </div>
+    </div>
+    <div class="header-meta">
+      <div class="ref-badge" id="passID">PASS-——</div>
+      <div class="header-date" id="headerDate"></div>
+    </div>
+  </div>
+
+  <form id="boatForm">
+    <div class="card">
+      <div class="card-title">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Passenger Information
+      </div>
+      <div class="form-grid">
+        <div class="field full">
+          <label for="passengerName">Full Name</label>
+          <input type="text" id="passengerName" placeholder="e.g. John Doe" required>
+        </div>
+        <div class="field">
+          <label for="weight">Weight (kg)</label>
+          <input type="number" id="weight" min="1" placeholder="e.g. 75" required>
+        </div>
+        <div class="field">
+          <label for="height">Height (cm)</label>
+          <input type="number" id="height" min="1" placeholder="e.g. 175" required>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn-submit">Verify & Log Boarding</button>
+    <div class="status-msg" id="statusMsg"></div>
+  </form>
+
+  <div class="result-card" id="resultCard">
+    <div class="result-banner" id="resultBanner">
+      <div>
+        <div class="result-ref" id="resultRef"></div>
+        <h2 id="resultTitle">Passenger Approved</h2>
+        <p id="resultSub">Safety Clearance Granted</p>
+      </div>
+    </div>
+
+    <div class="result-details">
+      <div class="detail-item"><div class="dl">Name</div><div class="dv" id="rName">—</div></div>
+      <div class="detail-item"><div class="dl">Weight</div><div class="dv" id="rWeight">—</div></div>
+      <div class="detail-item"><div class="dl">Height</div><div class="dv" id="rHeight">—</div></div>
+      <div class="detail-item"><div class="dl">Status</div><div class="dv" id="rStatus">—</div></div>
+    </div>
+
+    <div class="result-footer">
+      <button class="btn-new" onclick="resetForm()">Clear & Next Passenger</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
